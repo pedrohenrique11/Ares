@@ -1,23 +1,26 @@
 import prisma from '../utils/prismaClient'
+import { Prisma } from '@prisma/client'
 
-export class UserRository {
+export class UserPrismaRository {
     async getAllUsers() {
         return await prisma.user.findMany()
     }
-
-    async create(name: string, email: string, password: string, telephone: string, height: number, weight: number) {
-        return await prisma.user.create({
-            data: {
-                name, 
+    async deleteAllUsers() {
+        return await prisma.user.deleteMany({})
+    }
+    async getByEmail(email: string) {
+        return await prisma.user.findUnique({
+            where: {
                 email,
-                password,
-                telephone,
-                height,
-                weight
             }
         })
     }
-    async deleteAllUsers() {
-        return await prisma.user.deleteMany({})
+
+    async create(data: Prisma.UserCreateInput) {
+        const user = await prisma.user.create({
+            data,
+        })
+
+        return user
     }
 }
