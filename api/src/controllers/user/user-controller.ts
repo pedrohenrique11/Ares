@@ -1,9 +1,8 @@
 import { Request, Response } from "express";
-import { UserRository } from "../repositories/user-prisma-repository";
-import { UserServices } from "../services/user-services";
+import { UserPrismaRository } from "../../repositories/user-prisma-repository";
+import { register } from "../../services/register";
 
-const userRepository = new UserRository
-const userService = new UserServices
+const userRepository = new UserPrismaRository
 
 export class UserController{
     async showUsers(req: Request, res: Response) {
@@ -13,7 +12,7 @@ export class UserController{
     }
 
     async createUser(req: Request, res: Response) {
-        await userService.createUser(req, res)
+        await register(req, res)
 
         res.status(201).send('user created')
     }
