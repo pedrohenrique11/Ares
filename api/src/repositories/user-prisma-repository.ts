@@ -17,4 +17,7 @@ export class UserRository {
             }
         })
     }
+    async deleteAllUsers() {
+        return await prisma.user.deleteMany({})
+    }
 }

@@ -17,4 +17,10 @@ export class UserController{
 
         res.status(201).send('user created')
     }
+
+    async deleteUsers(req: Request, res: Response) {
+        await userRepository.deleteAllUsers()
+
+        res.send("users deleted")
+    }
 }
