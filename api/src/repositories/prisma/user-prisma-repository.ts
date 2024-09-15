@@ -1,11 +1,12 @@
-import prisma from '../utils/prismaClient'
+import prisma from '../../utils/prismaClient'
 import { Prisma } from '@prisma/client'
+import { UserRepository } from '../user-repository'
 
-export class UserPrismaRository {
-    async getAllUsers() {
+export class UserPrismaRository implements UserRepository {
+    async getAll() {
         return await prisma.user.findMany()
     }
-    async deleteAllUsers() {
+    async deleteAll() {
         return await prisma.user.deleteMany({})
     }
     async getByEmail(email: string) {
