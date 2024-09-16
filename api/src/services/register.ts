@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { UserRository } from "../repositories/user-repository";
+import { UserRepository } from "../repositories/user-repository";
 import { hash } from "bcryptjs";
 import { string, z } from "zod";
 
 
 export class RegisterService {
-    constructor(private userRepository: UserRository){}
+    constructor(private userRepository: UserRepository){}
 
     async execute(req: Request, res: Response) {
         const userData = z.object({
