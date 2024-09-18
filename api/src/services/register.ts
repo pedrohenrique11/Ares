@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import { UserRepository } from "../repositories/user-repository";
 import { hash } from "bcryptjs";
-import { string, z } from "zod";
+import { z } from "zod";
+import { EmailAlreadyExists } from "./errors/email-already-exists";
 
 
 export class RegisterService {
@@ -21,13 +22,11 @@ export class RegisterService {
         const password_hash = await hash(password, 10)
     
         const emailUsed = await this.userRepository.getByEmail(email)
-    
-        if(!emailUsed) {
-            await this.userRepository.create({name, email, password_hash, telephone, height, weight})
+        
+        if(emailUsed) {
+            throw new EmailAlreadyExists()
         }
-        else {
-            res.status(401).send('Email is already used')
-        }
-    
+        
+        await this.userRepository.create({name, email, password_hash, telephone, height, weight})
     }
 }
