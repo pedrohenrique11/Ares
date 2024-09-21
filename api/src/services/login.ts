@@ -24,9 +24,9 @@ export class LoginService{
             throw new InvalidatedCredentials
         }
 
-        const jwt = require('jsonwebtoken')
-        const userAuth = jwt({id: userExists.id, name: userExists.name}, process.env.JWR_SECRET_KEY,)
+        const jwt = require('jsonwebtoken');
+        const token = jwt.sign({ id: userExists.id, name: userExists.name }, process.env.JWT_SECRET_KEY);
 
-        return userAuth
+        return token
     }
 }

@@ -9,7 +9,7 @@ const loginService = new LoginService(userPrismaRository)
 export async function login(req: Request, res: Response) {
 
     try {
-        const login = await loginService.execute(req, res)
+        const token = await loginService.execute(req, res)
 
         res.send(login)
     }
