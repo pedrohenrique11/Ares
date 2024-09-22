@@ -26,7 +26,7 @@ export class RegisterService {
         if(emailUsed) {
             throw new EmailAlreadyExists()
         }
-        
+
         await this.userRepository.create({name, email, password_hash, telephone, height, weight})
     }
 }

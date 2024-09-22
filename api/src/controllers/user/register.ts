@@ -18,5 +18,4 @@ export async function register(req: Request, res: Response) {
             res.status(401).send(err.message)
         }
     }
-
 }
