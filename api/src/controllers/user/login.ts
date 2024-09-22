@@ -7,11 +7,10 @@ const userPrismaRository = new UserPrismaRository
 const loginService = new LoginService(userPrismaRository)
 
 export async function login(req: Request, res: Response) {
-
     try {
         const token = await loginService.execute(req, res)
 
-        res.send(login)
+        res.json({token})
     }
     catch(err) {
         if(err instanceof InvalidatedCredentials) {

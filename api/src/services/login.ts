@@ -11,14 +11,12 @@ export class LoginService{
 
         const userExists = await this.userRepository.getByEmail(email)
 
-        
         if (!userExists) {
             throw new InvalidatedCredentials
         }
 
         const databaseUserPassword = userExists.password_hash
-        const passwordIsCorrect = await compare(databaseUserPassword, password)
-
+        const passwordIsCorrect = await compare(password, databaseUserPassword)
 
         if (!passwordIsCorrect) {
             throw new InvalidatedCredentials
