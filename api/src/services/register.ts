@@ -1,23 +1,26 @@
 import { Request, Response } from "express";
 import { UserRepository } from "../repositories/user-repository";
 import { EmailAlreadyExists } from "./errors/email-already-exists";
+import { User } from "@prisma/client";
 import { hash } from "bcryptjs";
-import { z } from "zod";
+
+interface RegisterServiceRequest{
+        name: string,
+        email:string,
+        password:string,
+        telephone:string | null, 
+        height: number,
+        weight: number,
+}
+interface RegisterServiceResponse {
+    user: User
+}
 
 export class RegisterService {
     constructor(private userRepository: UserRepository){}
 
-    async execute(req: Request, res: Response) {
-        const userData = z.object({
-            name: z.string(),
-            email: z.string().email(),
-            password: z.string().min(6),
-            telephone: z.string().nullable(),
-            height: z.number(),
-            weight: z.number()
-        })
-    
-        const {name, email, password, telephone, weight, height} = userData.parse(req.body)
+    async execute({name, email, password, telephone, height, weight}: RegisterServiceRequest): Promise<RegisterServiceResponse> {
+
         const password_hash = await hash(password, 10)
     
         const emailUsed = await this.userRepository.getByEmail(email)
@@ -26,6 +29,9 @@ export class RegisterService {
             throw new EmailAlreadyExists()
         }
 
-        await this.userRepository.create({name, email, password_hash, telephone, height, weight})
+        const user = await this.userRepository.create({name, email, password_hash, telephone, height, weight})
+        
+        return { user }
     }
+
 }
