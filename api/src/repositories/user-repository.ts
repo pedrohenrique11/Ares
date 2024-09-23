@@ -4,6 +4,5 @@ export interface UserRepository{
     getByEmail(email: string): Promise<User | null>
     create(data: Prisma.UserCreateInput): Promise<User>
 
-    deleteAll(): Promise<Prisma.BatchPayload>;
-    getAll(): Promise<User[]>
+
 }

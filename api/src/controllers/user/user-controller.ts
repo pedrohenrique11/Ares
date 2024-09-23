@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { UserPrismaRository } from "../../repositories/prisma/user-prisma-repository";
+import { PrismaUserRository } from "../../repositories/prisma/prisma-user-repository";
 import { RegisterService } from "../../services/register";
 
-const userRepository = new UserPrismaRository
+const userRepository = new PrismaUserRository
 
 export class UserController{
     async showUsers(req: Request, res: Response) {

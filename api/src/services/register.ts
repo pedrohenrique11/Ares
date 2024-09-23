@@ -1,9 +1,8 @@
 import { Request, Response } from "express";
 import { UserRepository } from "../repositories/user-repository";
+import { EmailAlreadyExists } from "./errors/email-already-exists";
 import { hash } from "bcryptjs";
 import { z } from "zod";
-import { EmailAlreadyExists } from "./errors/email-already-exists";
-
 
 export class RegisterService {
     constructor(private userRepository: UserRepository){}

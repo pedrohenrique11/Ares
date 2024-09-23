@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { UserPrismaRository } from "../../repositories/prisma/user-prisma-repository";
+import { PrismaUserRository } from "../../repositories/prisma/prisma-user-repository";
 import { LoginService } from "../../services/login";
 import { InvalidatedCredentials } from "../../services/errors/invalidated-credentials";
 
-const userPrismaRository = new UserPrismaRository
+const userPrismaRository = new PrismaUserRository
 const loginService = new LoginService(userPrismaRository)
 
 export async function login(req: Request, res: Response) {

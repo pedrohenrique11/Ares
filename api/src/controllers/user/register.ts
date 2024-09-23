@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { RegisterService } from "../../services/register";
-import { UserPrismaRository } from "../../repositories/prisma/user-prisma-repository";
+import { PrismaUserRository } from "../../repositories/prisma/prisma-user-repository";
 import { EmailAlreadyExists } from "../../services/errors/email-already-exists";
 
 
 export async function register(req: Request, res: Response) {
     try {
-        const userRepository = new UserPrismaRository
+        const userRepository = new PrismaUserRository
         const registerService = new RegisterService(userRepository)
     
         await registerService.execute(req, res)
