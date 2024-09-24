@@ -33,4 +33,10 @@ export class InMemoryUserRepository implements UserRepository {
         return user
         
     }
+
+    async delete() {
+        const deleteUser = this.items.shift()
+
+        return deleteUser
+    }
 }

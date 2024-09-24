@@ -7,8 +7,10 @@ const userPrismaRository = new PrismaUserRository
 const loginService = new LoginService(userPrismaRository)
 
 export async function login(req: Request, res: Response) {
+    const {email, password} = req.body
+
     try {
-        const token = await loginService.execute(req, res)
+        const token = await loginService.execute({email, password})
 
         res.json({token})
     }
