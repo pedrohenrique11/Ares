@@ -32,7 +32,7 @@ export class LoginService{
         }
 
         const jwt = require('jsonwebtoken');
-        const token = jwt.sign({ id: userExists.id, name: userExists.name }, process.env.JWT_SECRET_KEY);
+        const token = jwt.sign({ id: userExists.id, name: userExists.name }, "lilicota");
 
         return token
     }

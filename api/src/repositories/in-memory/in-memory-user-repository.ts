@@ -20,15 +20,12 @@ export class InMemoryUserRepository implements UserRepository {
 
         this.items.push(user)
 
+        console.log('Usuários armazenados:', this.items);
         return user
     }
     
-    async getByEmail(email: string): Promise<User> {
-        const user = this.items.find((user) => user.email == email)!
-
-        if (!user) {
-            console.error("Usuário não encontrado")
-        }
+    async getByEmail(email: string): Promise<User | null> {
+        const user = this.items.find((user) => user.email == email) || null
 
         return user
         
