@@ -3,12 +3,21 @@ import { UserRepository } from "../repositories/user-repository";
 import { compare } from "bcryptjs";
 import { InvalidatedCredentials } from "./errors/invalidated-credentials";
 
+interface LoginServiceRequest{
+    email: string,
+    password: string
+}
+
+interface LoginServiceResponse{
+    token: any
+}
+
+
 export class LoginService{
     constructor(private userRepository: UserRepository){}
 
-    async execute(req: Request, res: Response) {
-        const {email, password} = req.body
-
+    async execute({email, password}: LoginServiceRequest): Promise<LoginServiceResponse> {
+        
         const userExists = await this.userRepository.getByEmail(email)
 
         if (!userExists) {
