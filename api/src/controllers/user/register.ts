@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { RegisterService } from "../../services/register";
+import { RegisterService } from "../../services/user/register";
 import { PrismaUserRository } from "../../repositories/prisma/prisma-user-repository";
 import { EmailAlreadyExists } from "../../services/errors/email-already-exists";
 import { z } from "zod";

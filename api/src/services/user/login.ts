@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { UserRepository } from "../repositories/user-repository";
+import { UserRepository } from "../../repositories/user-repository";
 import { compare } from "bcryptjs";
-import { InvalidatedCredentials } from "./errors/invalidated-credentials";
+import { InvalidatedCredentials } from "../errors/invalidated-credentials";
 
 interface LoginServiceRequest{
     email: string,

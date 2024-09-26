@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { PrismaUserRository } from "../../repositories/prisma/prisma-user-repository";
-import { LoginService } from "../../services/login";
+import { LoginService } from "../../services/user/login";
 import { InvalidatedCredentials } from "../../services/errors/invalidated-credentials";
 
 const userPrismaRository = new PrismaUserRository

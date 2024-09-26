@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { UserRepository } from "../repositories/user-repository";
-import { EmailAlreadyExists } from "./errors/email-already-exists";
+import { UserRepository } from "../../repositories/user-repository";
+import { EmailAlreadyExists } from "../errors/email-already-exists";
 import { User } from "@prisma/client";
 import { hash } from "bcryptjs";
 

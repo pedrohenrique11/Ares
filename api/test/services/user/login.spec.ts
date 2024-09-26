@@ -1,6 +1,6 @@
 import { InMemoryUserRepository } from "../../../src/repositories/in-memory/in-memory-user-repository";
-import { LoginService } from "../../../src/services/login"
-import { RegisterService } from "../../../src/services/register"
+import { LoginService } from "../../../src/services/user/login"
+import { RegisterService } from "../../../src/services/user/register"
 import { UserController } from "../../../src/controllers/user/user-controller"
 
 const inMemoryRepository = new InMemoryUserRepository
