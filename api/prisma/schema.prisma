@@ -34,29 +34,23 @@ model Workout {
 model Exercise {
   id              String      @id @default(uuid())
   name            String
-  setsPlanned     Int
-  repsPlanned     Int
-  weightPlanned   Float 
-  datePlanned     Int
-  setsCompleted   Int
-  repsCompleted   Int
-  weightCompleted Float
-  dateCompleted   DateTime
-  rir             Int?
+  category        String
   workoutId       String
-  progress        Progress[]
+  sets            Set[]
   
   workout         Workout     @relation(fields: [workoutId], references: [id])
 }
 
-model Progress {
-  id          String     @id @default(uuid())
-  exerciseId  String
-  sets        Int
-  reps        Int
-  weight      Float
-  rir         Int?
-  date        DateTime
-  
-  exercise    Exercise   @relation(fields: [exerciseId], references: [id])
+model Set {
+  id              String     @id @default(uuid())
+  exerciseId      String
+  category        String     @default("valid")
+  repsPlanned     Int
+  weightPlanned   Float
+  repsCompleted   Int?
+  weightUsed      Float?
+  rir             Int        @default(0)
+  date            DateTime
+
+  exercise        Exercise   @relation(fields: [exerciseId], references: [id])
 }
