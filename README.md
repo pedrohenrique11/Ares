@@ -8,23 +8,23 @@ User Registration:
 
 Register users with name, email, password, phone, height, and weight.
 Authentication via phone, email, Google, and Apple.
-Workout Management:
 
+Workout Management:
 Create and customize workouts with names and dates.
 Add exercises to each workout, with planned sets, reps, and weight.
 Track exercises with planned and completed details.
+
 Progression Tracking:
-
 Graphs to track the load progression in exercises, weight fluctuation, and workout days.
-Exercise Import:
 
+Exercise Import:
 Users can import exercises from an external API as templates.
 The exercise name is imported, while planned details (sets, reps, weight) are added by the user during creation.
+
 Load Progression Control:
-
 The system calculates load progression or regression based on the planned vs. completed sets and reps.
-User Deletion:
 
+User Deletion:
 Users can be deleted along with all associated workout and exercise data.
 
 ### Business Logic
