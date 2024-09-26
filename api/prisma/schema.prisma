@@ -21,10 +21,10 @@ model User {
 }
 
 model Workout {
-  id            String       @id @default(uuid())
+  id            String      @id @default(uuid())
   name          String
   date          DateTime
-  isCompleted   Boolean
+  isCompleted   Boolean     @default(false)
   userId        String
   exercises     Exercise[]
   
@@ -47,10 +47,11 @@ model Set {
   category        String     @default("valid")
   repsPlanned     Int
   weightPlanned   Float
+  datePLanned     DateTime
   repsCompleted   Int?
   weightUsed      Float?
+  dateCompleted   DateTime?
   rir             Int        @default(0)
-  date            DateTime
 
   exercise        Exercise   @relation(fields: [exerciseId], references: [id])
 }
