@@ -1,4 +1,4 @@
-import { RegisterService } from '../../../src/services/register'
+import { RegisterService } from '../../../src/services/user/register'
 import { InMemoryUserRepository } from '../../../src/repositories/in-memory/in-memory-user-repository'
 
 const repository = new InMemoryUserRepository
