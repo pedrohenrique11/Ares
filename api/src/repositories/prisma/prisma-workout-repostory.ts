@@ -16,6 +16,14 @@ export class WorkoutPrismaRepository implements WorkoutRepository {
             }
         })
     }
+    async getWorkoutById(id: string): Promise<Workout | null> {
+        const worktout = await prisma.workout.findUnique({
+            where: {
+                id,
+            }
+        })
+        return worktout
+    }
     async getCompletedWorkouts(isCompleted: boolean): Promise<Workout[]> {
         const completedWorkouts = await prisma.workout.findMany({
             where: {
