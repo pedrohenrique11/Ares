@@ -1,7 +1,7 @@
-# Ares-POC
+# Ares
 
 ### Description
-Ares-POC is an application designed for managing workout routines and tracking exercise progress. Users can create and customize their own workouts, track sets, repetitions, weight, and RIR (Rate of Perceived Exertion). The system also supports importing exercises from an external API, making it easier to create workout plans. Users can view graphical progress reports, and the app features authentication via phone, email, Google, and Apple accounts.
+Ares is an application designed for managing workout routines and tracking exercise progress. Users can create and customize their own workouts, track sets, repetitions, weight, and RIR (Rate of Perceived Exertion). The system also supports importing exercises from an external API, making it easier to create workout plans. Users can view graphical progress reports, and the app features authentication via phone, email, Google, and Apple accounts.
 
 ### Features
 User Registration:
