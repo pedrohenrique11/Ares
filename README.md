@@ -60,16 +60,16 @@
 
 <!-- ABOUT THE PROJECT -->
 About The Project
-![Product Name Screen Shot][product-screenshot]
+![Ares Screen Shot][product-screenshot]
 
 Ares was born out of the need to address the challenges many people face, whether they’ve been training for years or are just starting. The complexities of load progression, workout periodization, and overall training organization can be overwhelming, making it difficult to stay consistent and improve efficiently.
 
 Here's why Ares is different:
 
-Ares automates the process of calculating periodization and load progression based on your training data, saving you time and effort.
-Instead of manually planning and adjusting your workouts, you simply register your sets, reps, and weights, and Ares takes care of the rest.
-The app will also integrate with AI in the future to generate personalized training plans, ensuring your workouts are always optimized for your goals.
-Whether you're a seasoned athlete or a beginner, Ares simplifies your fitness journey by handling the complexities, allowing you to focus on what matters—getting stronger and improving over time.
+* Ares automates the process of calculating periodization and load progression based on your training data, saving you time and effort.
+* Instead of manually planning and adjusting your workouts, you simply register your sets, reps, and weights, and Ares takes care of the rest.
+* The app will also integrate with AI in the future to generate personalized training plans, ensuring your workouts are always optimized for your goals.
+* Whether you're a seasoned athlete or a beginner, Ares simplifies your fitness journey by handling the complexities, allowing you to focus on what matters—getting stronger and improving over time.
 
 Of course, fitness needs vary, so we’ll be continually improving Ares. You can also contribute by forking the repo and submitting your own enhancements or bug fixes. Thanks to everyone who has helped shape the development of this project!
 
