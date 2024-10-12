@@ -108,7 +108,7 @@ To get a local copy up and running follow these simple example steps.
 2. Navigate to the API directory:
    ```sh
    cd api
-   ``
+   ```
 3. Set up the environment variables: Create a .env file in the root directory and add your environment variables (e.g., database credentials, JWT secrets):
    ```sh
    DATABASE_URL=your_database_url
