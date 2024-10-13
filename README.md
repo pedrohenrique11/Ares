@@ -132,9 +132,8 @@ To get a local copy up and running follow these simple example steps.
 ### API
 - [x] Docker container
 - [ ] Install dependences
-- [ ] User can:
-    - [ ] Create account
-    - [ ] 
+- [ ] User use-cases:
+    - [X] Delete account
 
 See the [open issues](https://github.com/pedrohenrique11/Ares/issues) for a full list of proposed features (and known issues).
 
