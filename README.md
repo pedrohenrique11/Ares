@@ -79,8 +79,6 @@ Of course, fitness needs vary, so we’ll be continually improving Ares. You can
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * Node.js
 * Express
 * Prisma
@@ -89,14 +87,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * Vue.js
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
