@@ -114,7 +114,7 @@ Of course, fitness needs vary, so we’ll be continually improving Ares. You can
    ```
 5. Run database migrations using Prisma:
    ```sh
-   npx prisma migrate dev
+   npx prisma generate
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
