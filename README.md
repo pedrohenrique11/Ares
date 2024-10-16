@@ -105,8 +105,12 @@ Of course, fitness needs vary, so we’ll be continually improving Ares. You can
    ```
 3. Set up the environment variables: Create a .env file in the root directory and add your environment variables (e.g., database credentials, JWT secrets):
    ```sh
-   DATABASE_URL=your_database_url
-   JWT_SECRET=your_secret_key
+   POSTGRES_USER=user
+   POSTGRES_PASSWORD=password
+   POSTGRES_DB=database
+   POSTGRES_DB_DEV=databese_dev
+   DATABASE_URL=postgres://user:password@localhost:5432/database_name
+   JWT_SECRET_KEY=secretkey
    ```
 4. Run docker containne:
    ```sh
